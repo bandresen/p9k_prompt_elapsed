@@ -31,6 +31,9 @@ _elapsed_precmd() {
     unset _timer
 }
 
+P9K_ELAPSED_BG_COLOR=${DEFAULT_COLOR}
+P9K_ELAPSED_FG_COLOR="black"
+
 prompt_elapsed() {
     [[ -z "$_elapsed" ]] && return
 
@@ -44,7 +47,8 @@ prompt_elapsed() {
             res_color="gray"
         fi
 
-        "$1_prompt_segment" "$0" "$2" "$DEFAULT_COLOR" "$res_color" "$humanized" ''
+        "$1_prompt_segment" "$0" "$2" "${P9K_ELAPSED_BG_COLOR}" "${P9K_ELAPSED_FG_COLOR}" "$humanized" ''
+        # ^ kP         icon  ^    ^kP  ^ bg color                ^ fg color                ^ text      ^ icon
     fi
     unset _elapsed
 }
