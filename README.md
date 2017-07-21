@@ -19,3 +19,12 @@ Add `elapsed` to for example `POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`
 ```bash
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(... elapsed ...)
 ```
+
+### Colors
+
+Default values for colors:
+
+```bash
+P9K_ELAPSED_BG_COLOR=${DEFAULT_COLOR}
+P9K_ELAPSED_FG_COLOR="black"
+```
