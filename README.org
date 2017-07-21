@@ -1,0 +1,32 @@
+#+TITLE: Prompt for the [[https://github.com/bhilburn/powerlevel9k][powerlevel9k zsh theme]]
+#+AUTHOR: Benjamin Andresen
+
+Credit for =humanize_duration= goes to [[https://github.com/fisherman/humanize_duration][fisherman]]
+
+[[https://raw.githubusercontent.com/bandresen/p9k_prompt_elapsed/screenshots/screenshot.png]]
+
+* Installation
+
+Use a plugin manager for zsh, for example Zplugin to load it in your =.zshrc=
+
+#+begin_src shell
+zplugin load bandresen/p9k_prompt_elapsed
+#+end_src
+
+* Configuration
+
+Add =elapsed= to for example =POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=
+
+#+begin_src shell
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(... elapsed ...)
+#+end_src
+
+
+** Colors
+
+Default values for colors:
+
+#+begin_src shell
+P9K_ELAPSED_BG_COLOR=${DEFAULT_COLOR}
+P9K_ELAPSED_FG_COLOR="black"
+#+end_src
