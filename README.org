@@ -27,6 +27,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(... elapsed ...)
 Default values for colors:
 
 #+begin_src shell
-P9K_ELAPSED_BG_COLOR=${DEFAULT_COLOR}
-P9K_ELAPSED_FG_COLOR="black"
+P9K_ELAPSED_BG_COLOR="black"
+P9K_ELAPSED_ALARM_HIGH_COLOR="red"
+P9K_ELAPSED_ALARM_LOW_COLOR="gray"
 #+end_src

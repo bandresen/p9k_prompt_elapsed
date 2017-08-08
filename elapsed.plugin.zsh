@@ -31,24 +31,25 @@ _elapsed_precmd() {
     unset _timer
 }
 
-P9K_ELAPSED_BG_COLOR=${DEFAULT_COLOR}
-P9K_ELAPSED_FG_COLOR="black"
+P9K_ELAPSED_BG_COLOR="black"
+P9K_ELAPSED_ALARM_HIGH_COLOR="red"
+P9K_ELAPSED_ALARM_LOW_COLOR="gray"
 
 prompt_elapsed() {
     [[ -z "$_elapsed" ]] && return
 
-    local pretty res_color
+    local humanized result_color
     if [[ $_elapsed -ge 10 ]]; then # if below 10 don't show
         humanized=$(echo $((_elapsed * 1000)) | humanize_duration)
 
         if [[ $_elapsed -ge 60 ]]; then
-            res_color="red"
+            result_color=$P9K_ELAPSED_ALARM_HIGH_COLOR
         else
-            res_color="gray"
+            result_color=$P9K_ELAPSED_ALARM_LOW_COLOR
         fi
 
-        "$1_prompt_segment" "$0" "$2" "${P9K_ELAPSED_BG_COLOR}" "${P9K_ELAPSED_FG_COLOR}" "$humanized" ''
-        # ^ kP         icon  ^    ^kP  ^ bg color                ^ fg color                ^ text      ^ icon
+        "$1_prompt_segment" "$0" "$2" "${P9K_ELAPSED_BG_COLOR}" "${result_color}" "${humanized}" ''
+        # ^ kP         icon  ^    ^kP  ^ bg color                ^ fg color        ^ text         ^ icon
     fi
     unset _elapsed
 }
